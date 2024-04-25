@@ -25,7 +25,6 @@ void nqueen(int i, int n, vector<int> &col, vector<int> &d1, vector<int> &d2, ve
             d2[n+i-j] = 1;
             nqueen(i + 1, n, col, d1, d2, board);
 
-
             board[i][j] = '.';
             col[j] =0;
             d1[abs(i + j)] = 0;
@@ -40,7 +39,7 @@ int main()
     cout << "Enter the size of board(n-queen):\n";
     int n; 
     cin >> n;
-    vector<int> col(n), d1(n+2), d2(2* n+2); //diagonal 1 & 2
+    vector<int> col(n), d1(n+2), d2(2* n+2); //diagonal 1 & 2  not n for space handling
     vector<vector<char>> board(n, vector<char>(n, '.'));
     nqueen(0, n, col,d1,d2,board);
 }
